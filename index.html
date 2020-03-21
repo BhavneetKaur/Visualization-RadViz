@@ -1,0 +1,103 @@
+<!-- Used https://github.com/WYanChao/RadViz as base for the RadViz code-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>RadViz</title>
+
+<style type="text/css">
+
+	body{
+		background-color: lightgrey;
+	}
+
+	#content {
+		margin-top: 35px;
+		height: 90vh;
+		
+	}
+	#content .col-xs-8 {
+		height: 85vh;
+		overflow: auto;
+	}
+	#content .col-xs-4 {
+		border-right: 1px solid #eee;
+	}
+	
+	#data-table {
+		font-family: 'Helvetica Neue';
+		font-size: 18px;
+		overflow: auto;
+		height: 85vh;
+	}
+	
+	.table-header {
+		background-color: #ccc;
+	}
+
+
+	.leftlabel, .rightlabel {  
+        width: 50px;
+        padding: 2px;
+        text-align: center;
+        }
+	.row{
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	#browse-input{
+		text-align:center;
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	#radviz-part{
+		width: 1500px;
+		font-size: 25px;
+		font-weight: bold;
+	}
+
+	#filter{
+		font-size: 20px;
+		
+	}
+</style>
+
+</head>
+
+<body>
+	
+    
+	<script src='https://d3js.org/d3.v4.min.js' defer></script>
+	
+	<script src='RadViz.js' defer></script>	
+	<script src='index.js' defer></script>	
+	
+	<div id = "browse-input">
+	 <input type="file" id = "input" onchange = "handleFiles" />
+	</div>
+
+			<div class="row" height="300px">
+    			<div style="margin-left: 300px; margin-top: 15px; ">
+     				<span> Change Opacity </span>
+					 <span class="leftlabel" >0</span>
+    				<input id ="range1" type="range" min="0" max="100" value="100" style="width: 500px; margin-right: 10px;"/>
+    				<span class="rightlabel" >100</span>
+    			</div>
+			</div>	
+
+		<div id = radviz-part >
+				<div id = "select" style="width: 300px; float:left;">
+				<p> Select Parameters </p>
+                <div id="filter" style = "width:300px;">
+    			</div>
+			</div>
+			
+    		
+                <div id="radviz" style = "width: 1000px; float: left;">
+					<p style="display:block;"> Radviz </p>	
+				</div>	
+     	</div>				 
+</body>
